@@ -72,10 +72,11 @@ class OrganizationForm {
 
     edit = (event) => {
         if (cash.el.type === 'organization-sel') { 
-    
             organizationList.splice(cash.number, 1);
+            localStorage.setItem('Organization', JSON.stringify(organizationList));
         } else {
             counterPartyList.splice(cash.number, 1);
+            localStorage.setItem('Counterparty', JSON.stringify(counterPartyList));
         }
         event.preventDefault();
         let item = new Organization(this.toJson());

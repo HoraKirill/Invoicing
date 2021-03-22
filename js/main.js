@@ -129,8 +129,8 @@ let editBtnCount = document.querySelector('.editBtnСount').addEventListener('cl
             form.el.querySelector('.js-phone-data').value =  counterPartyList[i].el.phone;
             jsEditbtn.style.display = 'block';
             jsSavebtn.style.display = 'none';
-            cash = organizationList[i];
-            cash.number = i;;
+            cash = counterPartyList[i];
+            cash.number = i;
         }
     }
 });
