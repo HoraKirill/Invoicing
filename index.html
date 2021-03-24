@@ -2,35 +2,35 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css " />
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
 
   <div class="data">
     Выставление счетов</div>
-  <span class="content"> Контрагент
+  <span class="content-1"> Контрагент
     <select id="counterparty">
-    <option disabled>Выберете контрагента</option>
+    <option class="option" disabled>Выберете контрагента</option>
     </select>
-    <button class="deleteBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Удалить</button>
+    <button class="deleteBtnСount btn" type="button" data-toggle="" data-target="#exampleModal">Удалить</button>
     <button class="editBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Редактировать</button>
     <button class="viewBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Посмотреть данные</button>
   </span>
-  <span class="content"> Организация
+  <span class="content-1"> Организация
     <select id="organization">
       <option disabled>Выберете организацию</option>
     </select>
     <button class="deleteBtnOrg btn" type="button" data-toggle="" data-target="#exampleModal">Удалить</button>
     <button class="editBtnOrg btn" type="button" data-toggle="modal" data-target="#exampleModal">Редактировать</button>
-    <button class="viewBtnOrg " type="button" data-toggle="" data-target="#exampleModal">Посмотреть данные</button>
+    <button class="viewBtnOrg btn" type="button" data-toggle="modal" data-target="#exampleModal">Посмотреть данные</button>
   </span>
   <div class="content">
     <input class="date" type="date"/>
@@ -41,13 +41,13 @@
   <div>
     <button class="btn counterparty-btn" type="button" data-toggle="modal" data-target="#exampleModal">Создать Контрагент/Организацию</button>
   </div>
+
+   <!-- table -->
+
   <div class="products">
     Набор товаров
   </div>
-
-  <!-- table -->
-
-  <!-- <table class="table">
+  <table  class="table">
     <thead>
       <tr>
         <th scope="col">№</th>
@@ -60,31 +60,26 @@
         <th scope="col">Всего</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="bodytable">
       <tr>
         <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
+        <td><input type="text" class="nomenclature"></td>
+        <td><input type="text" class="quantity"></td>
+        <td><input type="text" class="price"></td>
+        <td><input type="text" class="amount"></td>
+        <td><select name="prcentNdc" id="">
+          <option value="20prc">20% НДС</option>
+          <option value="bezNdc">Без ндс</option>
+        </select></td>
+        <td><div class="Ndc"></div></td>
+        <td><div class="summ"></div></td>
       </tr>
     </tbody>
-  </table>  -->
+  </table> 
 
 <!-- Modal -->
 
-  <div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -122,9 +117,10 @@
   <script src="js/main.js"></script>
   <script src="js/organization.js"></script>
   <script src="js/table.js"></script> 
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> -->
-  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> -->
+  <script src="js/changeObj.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
