@@ -67,3 +67,45 @@
   width: 5%;
   
 }
+
+.nomenclature {
+  /* width: 100%; */
+}
+
+.table {
+ 
+  width: 100%;
+  white-space: nowrap;
+}
+
+.col-1 {
+  width: 10%;
+}
+
+.col-2 {
+  width: 30%;
+}
+
+.col-3 {
+  width: 10%;
+}
+
+.col-4 {
+  width: 10%;
+}
+
+.col-5 {
+  width: 10%;
+}
+
+.col-6 {
+  width: 10%;
+}
+
+.col-7 {
+  width: 10%;
+}
+
+.col-8 {
+  width: 10%;
+}
