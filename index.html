@@ -9,8 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css " />
-  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" /> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
 <body>
@@ -60,7 +60,7 @@
   <!-- table -->
 
   <div class="products">Набор товаров</div>
-  <table class="table">
+  <table class="table table-hover">
     <tfoot>
       <tr></tr>
       <th></th>
@@ -83,9 +83,10 @@
       </tr>
     </thead>
     <tbody class="bodytable">
-      
+
     </tbody>
   </table>
+  <button class="btn openPdf" type="button">Открыть pdf</button>
 
   <!-- Modal -->
 
@@ -111,6 +112,7 @@
             <input class="popup-form__input js-inn-data" name="inn-data" required placeholder="ИНН" />
             <input class="popup-form__input js-kpp-data" name="kpp-data" required placeholder="КПП" />
             <input class="popup-form__input js-bik-data" name="bik-data" required placeholder="БИК" />
+            <input class="popup-form__input js-name-bank" name="name-bank" required placeholder="Название банка" />
             <input class="popup-form__input js-pchet-data" name="pch-data" required placeholder="Р/С" />
             <input class="popup-form__input js-kchet-data" name="kch-data" required placeholder="К/С" />
             <input class="popup-form__input js-address-data" name="address-data" required placeholder="Адрес" />
@@ -134,7 +136,10 @@
   <script src="js/organization.js"></script>
   <script src="js/table.js"></script>
   <script src="js/changeObj.js"></script>
-  <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  <script src="js/pdfmake.min.js"></script>
+  <script src="js/vfs_fonts.js"></script>
+  <script src="js/savepdf.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
@@ -142,7 +147,9 @@
     </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script> -->
+    </script>
 </body>
 
 </html>
+
+

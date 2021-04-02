@@ -1,6 +1,6 @@
 
 .content {
-  display: block;
+  display: flexbox;
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -11,7 +11,8 @@
 }
 
 .content-1 {
-  display: inline-block;
+  display: -ms-flexbox;
+  justify-content: space-evenly;
   width: 45%;
   padding-right: 15px;
   padding-left: 15px;
@@ -52,60 +53,9 @@
   margin-left: 10px;
 }
 
-/* .popup-form__input {
-  display: block;
-  width: 100%;
-  line-height: 1;
-  margin-bottom: 2px;
-} */
-
 .js-edit-btn{
   display: none; 
 }
 
-.counterparty  {
-  width: 5%;
-  
-}
 
-.nomenclature {
-  /* width: 100%; */
-}
 
-.table {
- 
-  width: 100%;
-  white-space: nowrap;
-}
-
-.col-1 {
-  width: 10%;
-}
-
-.col-2 {
-  width: 30%;
-}
-
-.col-3 {
-  width: 10%;
-}
-
-.col-4 {
-  width: 10%;
-}
-
-.col-5 {
-  width: 10%;
-}
-
-.col-6 {
-  width: 10%;
-}
-
-.col-7 {
-  width: 10%;
-}
-
-.col-8 {
-  width: 10%;
-}

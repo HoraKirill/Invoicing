@@ -15,18 +15,22 @@ class TableForm {
 
     getRow() {
         const row = `<tr>
-            <th scope="row">${this.num}</th>
-            <td><input type="number" class="nomenclature"></td>
-            <td><input type="number"  class="quantity${this.num}"></td>
-            <td><input type="number" class="price${this.num}"></td>
-            <td><input type="number"  class="amount${this.num}"></td>
-            <td><select class="prcentNdc${this.num}" id="">
-              <option value="20prc">20% НДС</option>
-              <option value="bezNdc">Без ндс</option>
-            </select></td>
-            <td><div class="Ndc${this.num}"></div></td>
-            <td><div class="summ${this.num}"></div></td>
-            </tr>`;
+        <th scope="row">${this.num}</th>
+        <td><input type="text" class="nomenclature${this.num}"></td>
+        <td><input type="number" class="quantity${this.num}"></td>
+        <td><input type="number" class="price${this.num}"></td>
+        <td><input type="number" class="amount${this.num}"></td>
+        <td><select class="prcentNdc${this.num}" id="">
+            <option value="20prc">20% НДС</option>
+            <option value="bezNdc">Без ндс</option>
+          </select></td>
+        <td>
+          <div class="Ndc${this.num}"></div>
+        </td>
+        <td>
+          <div class="summ${this.num}"></div>
+        </td>
+        </tr>`;
         return row;
     }
 
@@ -75,6 +79,14 @@ class TableForm {
         });
     }
 
+    check(elPrc, elNdc) {
+        if (elPrc.value == '20prc') {
+            ndc.textContent = sum.toFixed(2);
+        } else {
+            elNdc.textContent = 'Без ндс';
+        }
+    }
+
     change(el, numT) {
         el.addEventListener('change', () => {
             let prcentNdc = document.querySelector(`.prcentNdc${numT}`),
@@ -86,11 +98,7 @@ class TableForm {
                 summ = document.querySelector(`.summ${numT}`);
             amount.value = pr.value * quan.value;
             sum = amount.value * 20 / 120;
-            if (prcentNdc.value == '20prc') {
-                ndc.textContent = sum.toFixed(2);
-            } else {
-                ndc.textContent = 'Без ндс';
-            }
+            check(prcentNdc, ndc);
             summ.textContent = amount.value;
         });
     }
@@ -106,11 +114,7 @@ class TableForm {
                 pr.value = el.value / quan.value;
             summ.textContent = el.value;
             sum = el.value * 20 / 120;
-            if (prcentNdc.value == '20prc') {
-                ndc.textContent = sum.toFixed(2);
-            } else {
-                ndc.textContent = 'Без ндс';
-            }
+            check(prcentNdc, ndc);
         })
     }
 }
