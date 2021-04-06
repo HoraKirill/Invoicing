@@ -13,6 +13,14 @@ function dateTable () {
 };
 
 function initialization (){
+
+	function getOoo (el, el2) {
+		for (let i = 0; i < el.length; i++) {
+			if (el[i].el.name === el2.value) {
+				return el[i].el.name + ' ИНН ' + el[i].el.inn + ' КПП ' + el[i].el.kpp + ' ' + el[i].el.address + ', ' + el[i].el.phone;
+			}
+	}
+}
 	
 let docInfo = {
     info: {
@@ -38,10 +46,10 @@ let docInfo = {
 				]
 			}
 		},
-		{text: 'Счет на оплату №  от ', style: 'header'},
-		{text: 'Поставщик ', style: 'tableHeader'},
-		{text: 'Получатель', style: 'tableHeader'},
-		{text: 'Основание', style: 'tableHeader'},
+		{text: 'Счет на оплату № ' + document.querySelector('.numberChet').value, style: 'header'},
+		{text: 'Поставщик: ' + getOoo(organizationList, selectOrg), style: 'tableHeader'},
+		{text: 'Получатель: ' +  getOoo(counterPartyList, selectCount), style: 'tableHeader'},
+		{text: 'Основание Договор № ' + document.querySelector('.contract').value, style: 'tableHeader'},
 		{	style: 'tableExample',
 			
 			table: {
@@ -51,8 +59,8 @@ let docInfo = {
 					
 				
 			}
-		}
-
+		},
+		{ text: 'Оплата данного счета означает согласие с условиями поставки товара. \n Уведомление об оплате обязательно, в противном случае не гарантируется наличие товара на складе.Товар отпускается по факту прихода денег на р/с Поставщика, самовывозом, при наличии доверенности и паспорта.' },
     ],
 
     styles: {

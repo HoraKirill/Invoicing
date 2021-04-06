@@ -18,38 +18,42 @@
   <span class="content-1">
     Контрагент
     <select id="counterparty">
-      <option class="option" disabled>Выберете контрагента</option>
+      <option class="option " disabled>Выберете контрагента</option>
     </select>
-    <button class="deleteBtnСount btn" type="button" data-toggle="" data-target="#exampleModal">
-      Удалить
-    </button>
-    <button class="editBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">
-      Редактировать
-    </button>
-    <button class="viewBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">
-      Посмотреть данные
-    </button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button class="deleteBtnСount btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+        Удалить
+      </button>
+      <button class="editBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Редактировать
+      </button>
+      <button class="viewBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Посмотреть данные
+      </button>
+    </div>
+
   </span>
   <span class="content-1">
     Организация
     <select id="organization">
       <option disabled>Выберете организацию</option>
     </select>
-    <button class="deleteBtnOrg btn" type="button" data-toggle="" data-target="#exampleModal">
-      Удалить
-    </button>
-    <button class="editBtnOrg btn" type="button" data-toggle="modal" data-target="#exampleModal">
-      Редактировать
-    </button>
-    <button class="viewBtnOrg btn" type="button" data-toggle="modal" data-target="#exampleModal">
-      Посмотреть данные
-    </button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button class="deleteBtnOrg btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+        Удалить
+      </button>
+      <button class="editBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Редактировать
+      </button>
+      <button class="viewBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Посмотреть данные
+      </button>
+    </div>
   </span>
   <div class="content">
     <input class="date" type="date" />
-  </div>
-  <div class="content">
     <input class="contract" type="text" placeholder="Номер договора" />
+    <input class="numberChet" type="text" placeholder="Номер счета" />
   </div>
   <div>
     <button class="btn counterparty-btn" type="button" data-toggle="modal" data-target="#exampleModal">
@@ -151,5 +155,3 @@
 </body>
 
 </html>
-
-
