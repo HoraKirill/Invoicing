@@ -2,93 +2,106 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Document</title>
   <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400,700&amp;subset=cyrillic-ext"
     rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css " />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
 </head>
 
 <body>
-
-  <div class="data">
-    Выставление счетов</div>
-  <span class="content"> Контрагент
+  <div class="data">Выставление счетов</div>
+  <span class="content-1">
+    Контрагент
     <select id="counterparty">
-    <option disabled>Выберете контрагента</option>
+      <option class="option " disabled>Выберете контрагента</option>
     </select>
-    <button class="deleteBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Удалить</button>
-    <button class="editBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Редактировать</button>
-    <button class="viewBtnСount btn" type="button" data-toggle="modal" data-target="#exampleModal">Посмотреть данные</button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button class="deleteBtnСount btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+        Удалить
+      </button>
+      <button class="editBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Редактировать
+      </button>
+      <button class="viewBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Посмотреть данные
+      </button>
+    </div>
+
   </span>
-  <span class="content"> Организация
+  <span class="content-1">
+    Организация
     <select id="organization">
       <option disabled>Выберете организацию</option>
     </select>
-    <button class="deleteBtnOrg btn" type="button" data-toggle="" data-target="#exampleModal">Удалить</button>
-    <button class="editBtnOrg btn" type="button" data-toggle="modal" data-target="#exampleModal">Редактировать</button>
-    <button class="viewBtnOrg " type="button" data-toggle="" data-target="#exampleModal">Посмотреть данные</button>
+    <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
+      <button class="deleteBtnOrg btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+        Удалить
+      </button>
+      <button class="editBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Редактировать
+      </button>
+      <button class="viewBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+        Посмотреть данные
+      </button>
+    </div>
   </span>
   <div class="content">
-    <input class="date" type="date"/>
-  </div>
-  <div class="content">
+    <input class="date" type="date" />
     <input class="contract" type="text" placeholder="Номер договора" />
+    <input class="numberChet" type="text" placeholder="Номер счета" />
   </div>
   <div>
-    <button class="btn counterparty-btn" type="button" data-toggle="modal" data-target="#exampleModal">Создать Контрагент/Организацию</button>
-  </div>
-  <div class="products">
-    Набор товаров
+    <button class="btn counterparty-btn" type="button" data-toggle="modal" data-target="#exampleModal">
+      Создать Контрагент/Организацию
+    </button>
   </div>
 
   <!-- table -->
 
-  <!-- <table class="table">
+  <div class="products">Набор товаров</div>
+  <table class="table table-hover">
+    <tfoot>
+      <tr></tr>
+      <th></th>
+      <th>
+        <button class="btnPlusStr">Добавить строку</button>
+        <button class="btnDeleteStr">Удалить строку</button>
+      </th>
+      </tr>
+    </tfoot>
     <thead>
       <tr>
-        <th scope="col">№</th>
-        <th scope="col">Намеклатура</th>
-        <th scope="col">Количество</th>
-        <th scope="col">Цена</th>
-        <th scope="col">Сумма</th>
-        <th scope="col">%НДС</th>
-        <th scope="col">НДС</th>
-        <th scope="col">Всего</th>
+        <th scope="col-1">№</th>
+        <th scope="col-2">Намеклатура</th>
+        <th scope="col-3">Количество</th>
+        <th scope="col-4">Цена</th>
+        <th scope="col-5">Сумма</th>
+        <th scope="col-6">%НДС</th>
+        <th scope="col-7">НДС</th>
+        <th scope="col-8">Всего</th>
       </tr>
     </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-        <td>@fat</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-        <td>@twitter</td>
-      </tr>
+    <tbody class="bodytable">
+
     </tbody>
-  </table>  -->
+  </table>
+  <button class="btn openPdf" type="button">Открыть pdf</button>
 
-<!-- Modal -->
+  <!-- Modal -->
 
-  <div class="modal " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Введите данные фирмы</h5>
+          <h5 class="modal-title" id="exampleModalLabel">
+            Введите данные фирмы
+          </h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -103,28 +116,42 @@
             <input class="popup-form__input js-inn-data" name="inn-data" required placeholder="ИНН" />
             <input class="popup-form__input js-kpp-data" name="kpp-data" required placeholder="КПП" />
             <input class="popup-form__input js-bik-data" name="bik-data" required placeholder="БИК" />
+            <input class="popup-form__input js-name-bank" name="name-bank" required placeholder="Название банка" />
             <input class="popup-form__input js-pchet-data" name="pch-data" required placeholder="Р/С" />
             <input class="popup-form__input js-kchet-data" name="kch-data" required placeholder="К/С" />
             <input class="popup-form__input js-address-data" name="address-data" required placeholder="Адрес" />
             <input class="popup-form__input js-phone-data" name="phone-data" type="tel" required
               placeholder="Номер телефона" />
-              <div class="modal-footer">
-                <button type="button" class=" btn-secondary js-save-btn" data-dismiss="modal" id="save-btn"> Сохранить </button>
-                <button type="button" class=" btn-secondary js-edit-btn" data-dismiss="modal" id="save-btn"> Изменить </button>
-              </div>
+            <div class="modal-footer">
+              <button type="button" class="btn-secondary js-save-btn" data-dismiss="modal" id="save-btn">
+                Сохранить
+              </button>
+              <button type="button" class="btn-secondary js-edit-btn" data-dismiss="modal" id="save-btn">
+                Изменить
+              </button>
+            </div>
           </form>
         </div>
-        
       </div>
     </div>
   </div>
 
   <script src="js/main.js"></script>
   <script src="js/organization.js"></script>
-  <script src="js/table.js"></script> 
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="js/table.js"></script>
+  <script src="js/changeObj.js"></script>
+  <script src="js/pdfmake.min.js"></script>
+  <script src="js/vfs_fonts.js"></script>
+  <script src="js/savepdf.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>

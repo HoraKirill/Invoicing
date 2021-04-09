@@ -40,6 +40,9 @@ class OrganizationForm {
     get bik() {
         return this.el.querySelector('.js-bik-data');
     }
+    get nameBank() {
+        return this.el.querySelector('.js-name-bank');
+    }
     get pchet() {
         return this.el.querySelector('.js-pchet-data');
     }
@@ -72,10 +75,11 @@ class OrganizationForm {
 
     edit = (event) => {
         if (cash.el.type === 'organization-sel') { 
-    
             organizationList.splice(cash.number, 1);
+            localStorage.setItem('Organization', JSON.stringify(organizationList));
         } else {
             counterPartyList.splice(cash.number, 1);
+            localStorage.setItem('Counterparty', JSON.stringify(counterPartyList));
         }
         event.preventDefault();
         let item = new Organization(this.toJson());
@@ -90,7 +94,7 @@ class OrganizationForm {
     }
 
     toJson() {
-        return { name: this.name.value, inn: this.inn.value, kpp: this.kpp.value, bik: this.bik.value, pchet: this.pchet.value, kchet: this.kchet.value, address: this.address.value,
+        return { name: this.name.value, inn: this.inn.value, kpp: this.kpp.value, bik: this.bik.value, nameBank: this.nameBank.value, pchet: this.pchet.value, kchet: this.kchet.value, address: this.address.value,
             phone: this.phone.value, type: this.type.value };
     }
 
