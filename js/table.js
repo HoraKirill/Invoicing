@@ -35,7 +35,6 @@ class TableForm {
         return row;
     }
 
-
     changeAllSumm(el) {
         let allSumm = document.getElementById("allSumm");
         console.log(allSumm);
