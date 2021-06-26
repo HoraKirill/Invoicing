@@ -5,6 +5,7 @@ let orgDisplay = JSON.parse(localStorage.getItem('Organization')),
     countDisplay = JSON.parse(localStorage.getItem('Counterparty')),
     selectOrg = document.getElementById('organization'),
     selectCount = document.getElementById('counterparty');
+    
 
 function getData() {
     if (localStorage.getItem('Organization') !== null) {

@@ -5,6 +5,7 @@ class Table {
 
 }
 
+
 class TableForm {
     constructor(el, num) {
         this.num = num;
@@ -34,6 +35,13 @@ class TableForm {
         return row;
     }
 
+
+    changeAllSumm(el) {
+        let allSumm = document.getElementById("allSumm");
+        console.log(allSumm);
+        allSumm.textContent = +allSumm.textContent + +el.textContent;
+    }
+
     plusStr = (event) => {
         event.preventDefault();
         let table = document.querySelector('.bodytable');
@@ -52,8 +60,10 @@ class TableForm {
 
     deleteStr() {
         const el = document.querySelector('.bodytable');
+        const allSumm = document.getElementById("allSumm");
         if (el.lastElementChild.rowIndex > 1) {
             table.num -= 1;
+            allSumm.textContent = +allSumm.textContent  - +el.lastElementChild.lastElementChild.innerText;
             el.removeChild(el.lastElementChild);
 
         }
@@ -74,14 +84,15 @@ class TableForm {
                 ndc.textContent = sum.toFixed(2);
             } else {
                 ndc.textContent = 'Без ндс';
-            }
+            };
             summ.textContent = amount.value;
+            this.changeAllSumm(summ);
         });
     }
 
     check(elPrc, elNdc) {
         if (elPrc.value == '20prc') {
-            ndc.textContent = sum.toFixed(2);
+            elNdc.textContent = sum.toFixed(2);
         } else {
             elNdc.textContent = 'Без ндс';
         }
@@ -98,8 +109,13 @@ class TableForm {
                 summ = document.querySelector(`.summ${numT}`);
             amount.value = pr.value * quan.value;
             sum = amount.value * 20 / 120;
-            check(prcentNdc, ndc);
+            if (prcentNdc.value == '20prc') {
+                ndc.textContent = sum.toFixed(2);
+            } else {
+                ndc.textContent = 'Без ндс';
+            };
             summ.textContent = amount.value;
+            this.changeAllSumm(summ);
         });
     }
 
@@ -111,13 +127,22 @@ class TableForm {
                 pr = document.querySelector(`.price${numT}`),
                 sum = 0,
                 summ = document.querySelector(`.summ${numT}`);
-                pr.value = el.value / quan.value;
+            pr.value = el.value / quan.value;
+            console.log(typeof pr.value);
+            pr.value = (+pr.value).toFixed(2);
             summ.textContent = el.value;
+            this.changeAllSumm(summ);
             sum = el.value * 20 / 120;
-            check(prcentNdc, ndc);
-        })
+            if (prcentNdc.value == '20prc') {
+                ndc.textContent = sum.toFixed(2);
+            } else {
+                ndc.textContent = 'Без ндс';
+            };
+        });
     }
-}
+
+
+};
 
 
 const table = new TableForm(document.querySelector('.table'), 0);

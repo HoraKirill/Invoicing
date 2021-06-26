@@ -15,69 +15,72 @@
 
 <body>
   <div class="data">Выставление счетов</div>
-  <span class="content-1">
+  <div class="content-1">
     Контрагент
     <select id="counterparty">
       <option class="option " disabled>Выберете контрагента</option>
     </select>
     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-      <button class="deleteBtnСount btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+      <button class="deleteBtnСount btn btn-info" type="button" data-toggle="" data-target="#exampleModal">
         Удалить
       </button>
-      <button class="editBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+      <button class="editBtnСount btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">
         Редактировать
       </button>
-      <button class="viewBtnСount btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+      <button class="viewBtnСount btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">
         Посмотреть данные
       </button>
     </div>
 
-  </span>
-  <span class="content-1">
+  </div>
+  <div class="content-1">
     Организация
     <select id="organization">
       <option disabled>Выберете организацию</option>
     </select>
     <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
-      <button class="deleteBtnOrg btn btn-secondary" type="button" data-toggle="" data-target="#exampleModal">
+      <button class="deleteBtnOrg btn btn-info" type="button" data-toggle="" data-target="#exampleModal">
         Удалить
       </button>
-      <button class="editBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+      <button class="editBtnOrg btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">
         Редактировать
       </button>
-      <button class="viewBtnOrg btn btn-secondary" type="button" data-toggle="modal" data-target="#exampleModal">
+      <button class="viewBtnOrg btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">
         Посмотреть данные
       </button>
     </div>
-  </span>
-  <div class="content">
-    <input class="date" type="date" />
-    <input class="contract" type="text" placeholder="Номер договора" />
-    <input class="numberChet" type="text" placeholder="Номер счета" />
   </div>
-  <div>
-    <button class="btn counterparty-btn" type="button" data-toggle="modal" data-target="#exampleModal">
+  <div class="content-1">
+    <button class="btn counterparty-btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">
       Создать Контрагент/Организацию
     </button>
+
+    <!-- table -->
+
+
+    <div class="products">Набор товаров</div>
+    <div class="content-1">
+      <p>Введите дату <input class="date" type="date" /></p>
+      <p>Введите договор <input class="contract" type="text" placeholder="Номер договора" /></p>
+      <p>Введите счет <input class="numberChet" type="text" placeholder="Номер счета" /></p>
+    </div>
   </div>
-
-  <!-- table -->
-
-  <div class="products">Набор товаров</div>
   <table class="table table-hover">
     <tfoot>
       <tr></tr>
       <th></th>
       <th>
-        <button class="btnPlusStr">Добавить строку</button>
-        <button class="btnDeleteStr">Удалить строку</button>
+        <button class="btnPlusStr btn-info" type="button">Добавить строку</button>
+        <button class="btnDeleteStr btn-info" type="button">Удалить строку</button>
+        <td colspan="5" align="right"> Всего</td>
+        <td id="allSumm">0</td>
       </th>
       </tr>
     </tfoot>
     <thead>
       <tr>
         <th scope="col-1">№</th>
-        <th scope="col-2">Намеклатура</th>
+        <th scope="col-2">Номенклатура</th>
         <th scope="col-3">Количество</th>
         <th scope="col-4">Цена</th>
         <th scope="col-5">Сумма</th>
@@ -90,7 +93,7 @@
 
     </tbody>
   </table>
-  <button class="btn openPdf" type="button">Открыть pdf</button>
+  <button class="btn openPdf btn-info" type="button">Открыть pdf</button>
 
   <!-- Modal -->
 
@@ -108,33 +111,60 @@
         </div>
         <div class="modal-body">
           <form class="main-form" name="form">
-            <select class="popup-form__label js-type-data" id="select-btn">
+            <select class="field js-type-data" id="select-btn">
               <option value="organization-sel">Организация</option>
               <option value="counterparty-sel">Контрагент</option>
             </select>
-            <input class="popup-form__input js-name-data" name="name-data" required placeholder="Название" />
-            <input class="popup-form__input js-inn-data" name="inn-data" required placeholder="ИНН" />
-            <input class="popup-form__input js-kpp-data" name="kpp-data" required placeholder="КПП" />
-            <input class="popup-form__input js-bik-data" name="bik-data" required placeholder="БИК" />
-            <input class="popup-form__input js-name-bank" name="name-bank" required placeholder="Название банка" />
-            <input class="popup-form__input js-pchet-data" name="pch-data" required placeholder="Р/С" />
-            <input class="popup-form__input js-kchet-data" name="kch-data" required placeholder="К/С" />
-            <input class="popup-form__input js-address-data" name="address-data" required placeholder="Адрес" />
-            <input class="popup-form__input js-phone-data" name="phone-data" type="tel" required
-              placeholder="Номер телефона" />
-            <div class="modal-footer">
-              <button type="button" class="btn-secondary js-save-btn" data-dismiss="modal" id="save-btn">
-                Сохранить
-              </button>
-              <button type="button" class="btn-secondary js-edit-btn" data-dismiss="modal" id="save-btn">
-                Изменить
-              </button>
+            <div class="field">
+              <label for="n">Название организации</label>
+              <input class="js-name-data" name="name-data" required placeholder="Название">
             </div>
-          </form>
+            <div class="field">
+              <label for="n">ИНН</label>
+              <input class="js-inn-data" name="inn-data" required placeholder="ИНН" />
+            </div>
+            <div class="field">
+              <label for="n">КПП</label>
+              <input class="js-kpp-data" name="kpp-data" required placeholder="КПП" />
+            </div>
+            <div class="field">
+              <label for="n">БИК</label>
+              <input class="js-bik-data" name="bik-data" required placeholder="БИК" />
+            </div>
+            <div class="field">
+              <label for="n">Название банка</label>
+              <input class="js-bank-data" name="name-bank" required placeholder="Название банка" />
+            </div>
+            <div class="field">
+              <label for="n">Р/С</label>
+              <input class="js-pchet-data" name="pch-data" required placeholder="Р/С" />
+            </div>
+            <div class="field">
+              <label for="n">К/С</label>
+              <input class="js-kchet-data" name="kch-data" required placeholder="К/С" />
+            </div>
+            <div class="field">
+              <label for="n">Адрес</label>
+              <input class="js-address-data" name="address-data" required placeholder="Адрес" />
+            </div>
+            <div class="field">
+              <label for="n">Телефон</label>
+              <input class="js-phone-data" name="phone-data" type="tel" required placeholder="Номер телефона" />
+            </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary js-save-btn" data-dismiss="modal" id="save-btn">
+            Сохранить
+          </button>
+          <button type="button" class="btn-secondary js-edit-btn" data-dismiss="modal" id="save-btn">
+            Изменить
+          </button>
         </div>
+        </form>
+      </div>
       </div>
     </div>
   </div>
+
 
   <script src="js/main.js"></script>
   <script src="js/organization.js"></script>
@@ -145,13 +175,13 @@
   <script src="js/savepdf.js"></script>
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
     integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
-    </script>
+  </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
-    </script>
+  </script>
 </body>
 
 </html>
